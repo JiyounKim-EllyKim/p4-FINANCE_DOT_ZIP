@@ -168,8 +168,6 @@
 
 ## 4. 시스템 아키텍처
 
-![alt text](<./assets/README img/Backend Architecture.png>)
-
 ```mermaid
 flowchart TD
     A[User Input / Company Search] --> B[Company Search API]
@@ -215,8 +213,6 @@ flowchart TD
 ## 5. 데이터 흐름
 
 ### Financial Data Pipeline
-
-![alt text](<assets/README img/SQL DB.png>)
 
 ```mermaid
 flowchart TD
@@ -519,8 +515,6 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 ---
 
 ## 7. AI 분석 및 Vector RAG 구조
-
-![alt text](<assets/README img/Vector DB.png>)
 
 ```mermaid
 flowchart TD
