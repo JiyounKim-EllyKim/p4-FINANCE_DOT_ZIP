@@ -168,6 +168,8 @@
 
 ## 4. 시스템 아키텍처
 
+![alt text](<./assets/README img/Backend Architecture.png>)
+
 ```mermaid
 flowchart TD
     A[User Input / Company Search] --> B[Company Search API]
@@ -213,6 +215,8 @@ flowchart TD
 ## 5. 데이터 흐름
 
 ### Financial Data Pipeline
+
+![alt text](<assets/README img/SQL DB.png>)
 
 ```mermaid
 flowchart TD
@@ -516,6 +520,8 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 
 ## 7. AI 분석 및 Vector RAG 구조
 
+![alt text](<assets/README img/Vector DB.png>)
+
 ```mermaid
 flowchart TD
     A[Company Query] --> B[Company Search]
@@ -778,10 +784,15 @@ rcept_no
 - Collection Log: `no_data`와 `failed`를 구분하여 실제 수집 실패와 정상 미조회 상태를 명확히 관리합니다.
 - MySQL + Pinecone Hybrid 구조: 정량 재무 데이터는 MySQL, 정성 공시/뉴스 문맥은 Vector DB로 분리해 검색과 분석 목적을 나눕니다.
 - Evidence 기반 LLM 응답: LLM이 임의로 판단하지 않도록 공시와 뉴스 근거를 선별한 뒤 리포트와 챗봇 입력으로 사용합니다.
+- 메타데이터 필터링(stock_code, year, signal_code)을 결합해 하이브리드 검색을 구현함으로써 검색 속도를 높이고 데이터 구조를 단순하였습니다.
+- 금융 뉴스 특성을 고려하여 FINANCE_TERMS 사전을 구축, 'D램/낸드 $\rightarrow$ 반도체', '수요 부진 $\rightarrow$ 업황 둔화' 등 금융·산업 도메인 용어를 정규화하여 임베딩 매칭 정확도를 고도화하였습니다.
+- 동일한 공시나 중복 뉴스가 검색되어 LLM 프롬프트 토큰을 낭비하지 않도록, source_url과 doc_id 기준의 디두프(Dedup) 알고리즘을 적용하고, max_content_length 제한을 통해 비용 효율적인 최적의 컨텍스트를 구성하였습니다.
 - Chat history 처리: 후속 질문에서 "방금 답변", "두 번째 뉴스" 같은 문맥 의존 질의를 처리하기 위해 최근 대화 기록을 제한적으로 사용합니다.
 - 단일 LLM + 목적별 Chain 분리: 동일한 LLM을 사용하되 재무 context 구성, 뉴스 질의 생성, 근거 필터링, 리포트 작성, 챗봇 응답을 각각 별도 Chain으로 분리하여 유지보수성과 프롬프트 실험 효율을 높였습니다.
 - 구조화된 JSON 기반 LLM 입출력: LLM 입력을 재무지표, detected_changes, evidence_news, evidence_disclosures 등으로 분리하여 전달함으로써 응답 품질을 안정화하고 프론트엔드 연동을 쉽게 했습니다.
 - 수치 계산과 LLM 해석 분리: 재무비율과 변화 감지는 Python/DB 로직에서 처리하고, LLM은 계산 결과와 근거를 바탕으로 해석·요약·질의응답에 집중하도록 설계했습니다.
+- AI 에이전트의 재무 분석 로직(Python 생태계)과 사용자 대시보드 UI(React 컴포넌트)를 완벽히 분리(Decoupling)하여 시스템 안정성을 높이고 독립적인 스케일아웃이 가능하도록 설계하였습니다.
+- 기존 Webpack 환경 대비 빌드 및 HMR(Hot Module Replacement) 속도를 극대화하여 개발 생산성을 높이고, 최종 산출물 번들 최적화를 통해 대용량 재무 차트 화면의 초기 진입 로딩 속도를 개선하였습니다.
 
 ---
 
@@ -807,7 +818,17 @@ FINANCE_DOT_ZIP
 
 ```
 FINANCE_DOT_ZIP
-├─ assets 
+├─ assets
+│  ├─ README img
+│  │  ├─ Backend Architecture.png
+│  │  ├─ image-4.png
+│  │  ├─ image-5.png
+│  │  ├─ image-6.png
+│  │  ├─ image-8.png
+│  │  ├─ image-9.png
+│  │  ├─ image-10.png
+│  │  ├─ SQL DB.png
+│  │  └─ Vector DB.png
 │  └─ team
 │     ├─ clawhauser.jpg
 │     ├─ flash.jpg
@@ -1096,14 +1117,33 @@ Frontend 개발 서버는 기본적으로 `http://localhost:5173`에서 실행�
 프로젝트 실행을 위해 `.env` 파일에 아래 API Key 및 DB 정보를 설정해야 합니다.
 
 ```env
-OPENAI_API_KEY=
-TAVILY_API_KEY=
-PINECONE_API_KEY=
+# MySQL / Aiven Cloud DB
+MYSQL_HOST=
+MYSQL_PORT=
+MYSQL_USER=
+MYSQL_PASSWORD=
+MYSQL_DATABASE=
+MYSQL_SSL_MODE=REQUIRED
+
+# Django
+DJANGO_SETTINGS_MODULE=config.settings
+
+# OpenDART API 키
+# https://opendart.fss.or.kr/에서 발급받은 키를 입력하세요
 DART_API_KEY=
-DB_HOST=
-DB_USER=
-DB_PASSWORD=
-DB_NAME=
+
+# Tavily API 키
+TAVILY_API_KEY=
+
+# Pineconeo API 키
+VECTOR_DB=
+PINECONE_INDEX_NAME=
+PINECONE_API_KEY=
+
+# OpenAI API 키
+OPENAI_API_KEY=
+OPENAI_MODEL_NAME=gpt-4o-mini
+OPENAI_TEMPERATURE=0
 ```
 
 ### 회사 메타데이터 적재
@@ -1126,7 +1166,8 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 
 ## 12. 서비스 시나리오
 
-![alt text](image-8.png)
+
+![alt text](<assets/README img/image-8.png>)
 
 입력:
 
@@ -1134,7 +1175,7 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 삼성전자
 ```
 
-![alt text](image-9.png)
+![alt text](<assets/README img/image-9.png>)
 
 처리 흐름:
 
@@ -1148,10 +1189,10 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 8. 종합 리포트 생성
 9. 사용자의 후속 질문은 리포트 context와 chat history 기반으로 답변
 
-![alt text](image-4.png)
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-10.png)
+![alt text](<assets/README img/image-4.png>)
+![alt text](<assets/README img/image-5.png>)
+![alt text](<assets/README img/image-6.png>)
+![alt text](<assets/README img/image-10.png>)
 
 출력:
 
