@@ -788,80 +788,283 @@ rcept_no
 ## 10. 프로젝트 구조
 
 ```text
-FINANCE_DOT_ZIP/
-├── backend/
-│   ├── config/
-│   │   └── urls.py
-│   ├── app/
-│   │   ├── urls.py
-│   │   ├── views.py
-│   │   └── models.py
-│   └── src/
-│       ├── ai/
-│       │   ├── comprehensive_report_service.py
-│       │   ├── financial_context_builder.py
-│       │   ├── news_query_builder.py
-│       │   ├── news_search_cache_service.py
-│       │   ├── news_vector_ingest_service.py
-│       │   ├── disclosure_retriever.py
-│       │   ├── news_retriever.py
-│       │   ├── vector_evidence_retriever.py
-│       │   ├── report_writer_chain.py
-│       │   ├── chat_context_builder.py
-│       │   ├── chat_history_builder.py
-│       │   └── report_chat_chain.py
-│       ├── api/
-│       ├── core/
-│       ├── data/
-│       │   ├── dart_api.py
-│       │   ├── process_financials.py
-│       │   ├── process_single_all_accounts.py
-│       │   └── batch/
-│       │       ├── create_batch_templates.py
-│       │       ├── prepare_company_batches.py
-│       │       ├── export_batch_financials.py
-│       │       ├── export_major_event_occurrences.py
-│       │       └── import_batch_exports.py
-│       ├── db/
-│       │   └── seed_companies.py
-│       ├── services/
-│       └── vector_db/
-│           ├── vector_store.py
-│           ├── upsert_pipeline.py
-│           ├── retriever.py
-│           ├── news_preprocessor.py
-│           ├── metadata_schema.py
-│           └── metadata_filter.py
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── layouts/
-│   │   ├── pages/
-│   │   └── util/
-│   ├── package.json
-│   └── vite.config.js
-├── data/
-│   ├── company_master/
-│   │   ├── listed_companies_master.csv
-│   │   ├── companies_for_db.csv
-│   │   ├── company_master_log.csv
-│   │   └── company_batch_summary.md
-│   └── export/
-│       ├── kospi_001/
-│       ├── kospi_002/
-│       ├── kosdaq_001/
-│       ├── kosdaq_002/
-│       ├── kosdaq_003/
-│       ├── kosdaq_004/
-│       ├── konex_001/
-│       └── disclosure/
-├── docs/
-│   ├── VECTOR_DB_GUIDE.md
-│   ├── SIGNAL_CODE_GUIDE.md
-│   └── vector_db_schema.md
-├── README.md
-└── .gitignore
+FINANCE_DOT_ZIP
+├─ backend/                         # Django 기반 AI 백엔드 엔진
+│  └─ src/                          # 핵심 도메인 로직
+│     ├─ ai/                        # 뉴스·공시 RAG 체인 및 LLM 리포트 생성
+│     ├─ data/                      # OpenDART API 연동 및 재무 데이터 배치 처리
+│     ├─ services/                  # 조기경보 시그널 및 비즈니스 핵심 로직
+│     └─ vector_db/                 # Pinecone 연동 및 뉴스 임베딩·검색 파이프라인
+├─ data/                            # 로컬 데이터 저장소 (시장별 수집 데이터 CSV)
+├─ docs/                            # 아키텍처, API 명세, DB 설계 등 프로젝트 문서
+└─ frontend/                        # Vite + React 기반 대시보드 UI
+   └─ src/                          # 프론트엔드 소스 코드 (공시, 뉴스분석, 보고서 페이지)
+
 ```
+
+<details>
+<summary>전체 프로젝트 구조 보기</summary>
+
+```
+FINANCE_DOT_ZIP
+├─ assets 
+│  └─ team
+│     ├─ clawhauser.jpg
+│     ├─ flash.jpg
+│     ├─ gary.jpg
+│     ├─ judy_hopps.jpg
+│     ├─ little_judith.jpg
+│     └─ nick.jpg
+├─ backend
+│  ├─ app
+│  │  ├─ admin.py
+│  │  ├─ apps.py
+│  │  ├─ migrations
+│  │  │  └─ __init__.py
+│  │  ├─ models.py
+│  │  ├─ tests.py
+│  │  ├─ urls.py
+│  │  ├─ views.py
+│  │  └─ __init__.py
+│  ├─ config
+│  │  ├─ asgi.py
+│  │  ├─ settings.py
+│  │  ├─ urls.py
+│  │  ├─ views.py
+│  │  ├─ wsgi.py
+│  │  └─ __init__.py
+│  ├─ manage.py
+│  ├─ requirements.txt
+│  ├─ src
+│  │  ├─ ai
+│  │  │  ├─ backend_payload_adapter.py
+│  │  │  ├─ chat_context_builder.py
+│  │  │  ├─ chat_history_builder.py
+│  │  │  ├─ chat_safety_filter.py
+│  │  │  ├─ comprehensive_report_service.py
+│  │  │  ├─ disclosure_retriever.py
+│  │  │  ├─ financial_context_builder.py
+│  │  │  ├─ financial_term_glossary.py
+│  │  │  ├─ industry_analysis_rules.py
+│  │  │  ├─ llm_client.py
+│  │  │  ├─ news_evidence_filter.py
+│  │  │  ├─ news_evidence_quality_filter.py
+│  │  │  ├─ news_query_builder.py
+│  │  │  ├─ news_retriever.py
+│  │  │  ├─ news_search_cache_service.py
+│  │  │  ├─ news_search_service.py
+│  │  │  ├─ news_vector_ingest_service.py
+│  │  │  ├─ rag_chain.py
+│  │  │  ├─ report_chat_chain.py
+│  │  │  ├─ report_writer_chain.py
+│  │  │  ├─ sample_disclosure_data.py
+│  │  │  ├─ sample_report_data.py
+│  │  │  ├─ vector_evidence_retriever.py
+│  │  │  ├─ warning_trigger.py
+│  │  │  └─ __init__.py
+│  │  ├─ api
+│  │  │  ├─ report_api.py
+│  │  │  └─ __init__.py
+│  │  ├─ api_server.py
+│  │  ├─ core
+│  │  │  ├─ config.py
+│  │  │  └─ __init__.py
+│  │  ├─ data
+│  │  │  ├─ batch
+│  │  │  │  ├─ create_batch_templates.py
+│  │  │  │  ├─ export_batch_financials.py
+│  │  │  │  ├─ export_major_event_occurrences.py
+│  │  │  │  ├─ import_batch_exports.py
+│  │  │  │  ├─ prepare_company_batches.py
+│  │  │  │  └─ __init__.py
+│  │  │  ├─ dart_api.py
+│  │  │  ├─ process_financials.py
+│  │  │  ├─ process_single_all_accounts.py
+│  │  │  └─ __init__.py
+│  │  ├─ db
+│  │  │  ├─ check_connection.py
+│  │  │  ├─ connection.py
+│  │  │  ├─ create_tables.py
+│  │  │  ├─ insert_financials.py
+│  │  │  ├─ insert_sample_companies.py
+│  │  │  ├─ queries.py
+│  │  │  ├─ schema.sql
+│  │  │  ├─ seed_companies.py
+│  │  │  └─ __init__.py
+│  │  ├─ main.py
+│  │  ├─ services
+│  │  │  ├─ detected_change_service.py
+│  │  │  ├─ finance_service.py
+│  │  │  ├─ financial_processor.py
+│  │  │  ├─ industry_classifier.py
+│  │  │  ├─ report_service.py
+│  │  │  ├─ signal_service.py
+│  │  │  ├─ trigger_rules.py
+│  │  │  └─ __init__.py
+│  │  ├─ vector_db
+│  │  │  ├─ context_merger.py
+│  │  │  ├─ document_builder.py
+│  │  │  ├─ metadata_filter.py
+│  │  │  ├─ metadata_schema.py
+│  │  │  ├─ news_preprocessor.py
+│  │  │  ├─ query_builder.py
+│  │  │  ├─ retriever.py
+│  │  │  ├─ upsert_pipeline.py
+│  │  │  ├─ vector_store.py
+│  │  │  ├─ __init__.py
+│  │  │  └─ 참고
+│  │  │     ├─ disclosure_dictionary.py
+│  │  │     ├─ entity_extractor.py
+│  │  │     ├─ finance_synonyms.py
+│  │  │     ├─ pinecone_service.py
+│  │  │     ├─ setup_pinecone.py
+│  │  │     └─ __init__.py
+│  │  └─ __init__.py
+│  ├─ tests
+│  │  ├─ test_ai_report_api.py
+│  │  ├─ test_ai_report_api_debug_response.py
+│  │  ├─ test_ai_report_api_vector_rag.py
+│  │  ├─ test_ai_report_vector_rag.py
+│  │  ├─ test_ai_report_with_backend_api.py
+│  │  ├─ test_backend_payload_adapter.py
+│  │  ├─ test_check_data.py
+│  │  ├─ test_check_tables.py
+│  │  ├─ test_company_search.py
+│  │  ├─ test_comprehensive_report_service.py
+│  │  ├─ test_news_query_builder.py
+│  │  ├─ test_news_vector_search.py
+│  │  ├─ test_pinecone_stats.py
+│  │  ├─ test_real_data_load.py
+│  │  ├─ test_report_api.py
+│  │  ├─ test_report_chat_api.py
+│  │  ├─ test_report_chat_api_fast.py
+│  │  ├─ test_report_chat_api_vector_rag.py
+│  │  ├─ test_report_chat_debug_response.py
+│  │  ├─ test_report_chat_history_api.py
+│  │  ├─ test_report_chat_with_backend_api.py
+│  │  ├─ test_report_service.py
+│  │  ├─ test_report_writer_with_disclosure_mock.py
+│  │  ├─ test_signal_service.py
+│  │  ├─ test_tavily.py
+│  │  ├─ test_warning_trigger.py
+│  │  └─ __init__.py
+│  ├─ WIE_TEST
+│  │  ├─ export_disclosure_business_sections.py
+│  │  ├─ export_disclosure_business_sections_ver2.py
+│  │  └─ export_major_disclosures_ver2.py
+│  └─ __init__.py
+├─ conda
+├─ data
+│  ├─ company_master
+│  │  └─ company_batch_summary.md
+│  └─ export
+│     ├─ disclosure
+│     │  ├─ konex_001
+│     │  ├─ kosdaq_001
+│     │  ├─ kosdaq_002
+│     │  ├─ kosdaq_003
+│     │  ├─ kosdaq_004
+│     │  ├─ kospi_001
+│     │  └─ kospi_002
+│     ├─ konex_001
+│     │  └─ batch_summary.md
+│     ├─ kosdaq_001
+│     │  └─ batch_summary.md
+│     ├─ kosdaq_002
+│     │  └─ batch_summary.md
+│     ├─ kosdaq_003
+│     │  └─ batch_summary.md
+│     ├─ kosdaq_004
+│     │  └─ batch_summary.md
+│     ├─ kospi_001
+│     │  └─ batch_summary.md
+│     └─ kospi_002
+│        └─ batch_summary.md
+├─ docs
+│  ├─ api_spec.md
+│  ├─ batch_export_format.md
+│  ├─ db_schema.md
+│  ├─ final_report_format.md
+│  ├─ signal_code_guide.md
+│  ├─ system_architecture.md
+│  ├─ team_batch_collection_plan.md
+│  ├─ test_report.md
+│  ├─ vector_db_guide.md
+│  └─ vector_db_schema.md
+├─ frontend
+│  ├─ eslint.config.js
+│  ├─ index.html
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ public
+│  │  ├─ dotzip_favicon.svg
+│  │  ├─ favicon.svg
+│  │  ├─ icons.svg
+│  │  └─ mockServiceWorker.js
+│  ├─ README.md
+│  ├─ src
+│  │  ├─ App.css
+│  │  ├─ App.jsx
+│  │  ├─ assets
+│  │  │  ├─ dotzip.png
+│  │  │  └─ rat_icon.png
+│  │  ├─ components
+│  │  │  ├─ ChatArea
+│  │  │  │  ├─ AIchatpanel.css
+│  │  │  │  └─ AIchatpanel.jsx
+│  │  │  ├─ Footer.jsx
+│  │  │  ├─ Header.css
+│  │  │  ├─ Header.jsx
+│  │  │  ├─ MainContent.jsx
+│  │  │  ├─ Report.jsx
+│  │  │  ├─ SearchBox.css
+│  │  │  └─ SearchBox.jsx
+│  │  ├─ index.css
+│  │  ├─ layouts
+│  │  │  ├─ MainLayout.css
+│  │  │  └─ MainLayout.jsx
+│  │  ├─ main.jsx
+│  │  ├─ mocks
+│  │  │  ├─ browser.js
+│  │  │  └─ handlers.js
+│  │  ├─ mock_data.js
+│  │  ├─ pages
+│  │  │  ├─ Disclosure
+│  │  │  │  ├─ components
+│  │  │  │  │  └─ CompDisclosure.jsx
+│  │  │  │  ├─ Disclosure.css
+│  │  │  │  └─ index.jsx
+│  │  │  ├─ Home
+│  │  │  │  └─ index.jsx
+│  │  │  ├─ NewsAnalysis
+│  │  │  │  ├─ components
+│  │  │  │  │  ├─ NewsSource.jsx
+│  │  │  │  │  ├─ NewsSummary.jsx
+│  │  │  │  │  ├─ SignalDetail.jsx
+│  │  │  │  │  └─ SignalList.jsx
+│  │  │  │  ├─ index.jsx
+│  │  │  │  └─ NewsAnalysis.css
+│  │  │  └─ Report
+│  │  │     ├─ components
+│  │  │     │  ├─ BasicInfo.jsx
+│  │  │     │  ├─ FinancialTable.jsx
+│  │  │     │  └─ RevenueChart.jsx
+│  │  │     ├─ index.jsx
+│  │  │     └─ Report.css
+│  │  └─ util
+│  │     └─ common-util.js
+│  └─ vite.config.js
+├─ LICENSE
+├─ package-lock.json
+├─ package.json
+├─ process_financials_notebook.ipynb
+├─ README.md
+└─ vector_db
+   └─ pinecone
+      └─ pinecone_config.md
+
+```
+</details>
 
 ---
 
@@ -923,11 +1126,15 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 
 ## 12. 서비스 시나리오
 
+![alt text](image-8.png)
+
 입력:
 
 ```text
-삼성전자 최근 5년 재무상태랑 위험 신호 분석해줘
+삼성전자
 ```
+
+![alt text](image-9.png)
 
 처리 흐름:
 
@@ -940,6 +1147,11 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 7. LLM 분석 엔진에 구조화된 JSON 입력
 8. 종합 리포트 생성
 9. 사용자의 후속 질문은 리포트 context와 chat history 기반으로 답변
+
+![alt text](image-4.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
+![alt text](image-10.png)
 
 출력:
 
