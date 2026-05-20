@@ -61,48 +61,66 @@
 
 <table align="center">
   <tr>
-    <td align="center" width="150" valign="top">
-      <img src="./assets/team/gary.jpg" width="100" height="120" style="object-fit:contain;"><br>
-      <b>김이선</b><br>
+    <td align="center" width="150" height="140">
+      <img src="./assets/team/gary.jpg" width="100" height="110">
+    </td>
+    <td align="center" width="150" height="140">
+      <img src="./assets/team/little_judith.jpg" width="100" height="110">
+    </td>
+    <td align="center" width="150" height="140">
+      <img src="./assets/team/judy_hopps.jpg" width="100" height="110">
+    </td>
+    <td align="center" width="150" height="140">
+      <img src="./assets/team/nick.jpg" width="100" height="110">
+    </td>
+    <td align="center" width="150" height="140">
+      <img src="./assets/team/clawhauser.jpg" width="100" height="110">
+    </td>
+    <td align="center" width="150" height="140">
+      <img src="./assets/team/flash.jpg" width="100" height="110">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>김이선</b></td>
+    <td align="center"><b>김지윤</b></td>
+    <td align="center"><b>박소윤</b></td>
+    <td align="center"><b>박은지</b></td>
+    <td align="center"><b>위희찬</b></td>
+    <td align="center"><b>홍지윤</b></td>
+  </tr>
+
+  <tr>
+    <td align="center">
       <sub><a href="https://github.com/kysuniv-cyber">@kysuniv-cyber</a></sub>
     </td>
-    <td align="center" width="150" valign="top">
-      <img src="./assets/team/little_judith.jpg" width="100" height="120" style="object-fit:contain;"><br>
-      <b>김지윤</b><br>
+    <td align="center">
       <sub><a href="https://github.com/JiyounKim-EllyKim">@JiyounKim-EllyKim</a></sub>
     </td>
-    <td align="center" width="150" valign="top">
-      <img src="./assets/team/judy_hopps.jpg" width="100" height="120" style="object-fit:contain;"><br>
-      <b>박소윤</b><br>
+    <td align="center">
       <sub><a href="https://github.com/parksoyun9084-cloud">@parksoyun9084-cloud</a></sub>
     </td>
-    <td align="center" width="150" valign="top">
-      <img src="./assets/team/nick.jpg" width="100" height="120" style="object-fit:contain;"><br>
-      <b>박은지</b><br>
+    <td align="center">
       <sub><a href="https://github.com/lo1f0306">@lo1f0306</a></sub>
     </td>
-    <td align="center" width="150" valign="top">
-      <img src="./assets/team/clawhauser.jpg" width="100" height="120" style="object-fit:contain;"><br>
-      <b>위희찬</b><br>
+    <td align="center">
       <sub><a href="https://github.com/dnlgmlcks">@dnlgmlcks</a></sub>
     </td>
-    <td align="center" width="150" valign="top">
-      <img src="./assets/team/flash.jpg" width="100" height="120" style="object-fit:contain;"><br>
-      <b>홍지윤</b><br>
+    <td align="center">
       <sub><a href="https://github.com/jyh-skn">@jyh-skn</a></sub>
     </td>
   </tr>
 </table>
 
 
-| 이름 | 역할 | 담당 |
-| --- | --- | --- |
-| 김이선 | UI & 시각화 - 프론트엔드 | - Plotly.js 기반 재무 추이 차트 구현<br>- 동적 대시보드 구현<br>- 분석 리포트형 HTML/CSS 레이아웃 설계 |
-| 김지윤 | AI & Agent | - LangChain 기반 AI 리포트 생성 파이프라인 설계<br>- MySQL 재무 데이터와 Vector DB 근거를 결합한 Hybrid Chain 구현<br>- Tavily 뉴스 검색 및 Evidence Filter 연동<br>- AI 리포트 생성 Chain과 리포트 챗봇 Chain 구현<br>- 재무 용어 응답 및 챗봇 안전 필터링 로직 보강 |
-| 박소윤 | Data Engineering - DB/Infra & Retrieval | - MySQL·Vector DB 기반 Hybrid Retrieval 구조 설계<br>- metadata filtering 및 disclosure/news retrieval 구현<br>- signals·detected_changes 기반 AI 검색 입력 및 API schema 설계<br>- Frontend·AI 연동 인터페이스 안정화 |
-| 박은지 | PM/문서화/API 명세 | - 일정 관리 및 문서화 총괄<br>- API 명세 관리<br>- 리포트 논리 구조 설계<br>- 재무 데이터 거버넌스 및 뉴스 검색 임계치 기준 수립 |
-| 위희찬 | Data Engineering - 수집/가공 | - OpenDART 재무제표 수집<br>- 핵심 재무계정 기반 5개년 데이터 수집<br>- 재무비율 산출 및 MySQL 적재 준비<br>- 공시 텍스트 청킹 |
-| 홍지윤 | UI & 시각화 - 웹 프레임워크/연동 | - FastAPI/Django 기반 백엔드 서버 초안 구성<br>- AI 로직 및 DB 데이터를 프론트엔드로 전달하는 API 연동<br>- 비동기 로딩 화면 구현 |
+| 이름   | 역할 | 담당 |
+|------| --- | --- |
+| 김이선  | UI & 시각화 - 프론트엔드 | - Plotly.js 기반 재무 추이 차트 구현<br>- 동적 대시보드 구현<br>- 분석 리포트형 HTML/CSS 레이아웃 설계 |
+| 김지윤  | AI & Agent | - LangChain 기반 AI 리포트 생성 파이프라인 설계<br>- MySQL 재무 데이터와 Vector DB 근거를 결합한 Hybrid Chain 구현<br>- Tavily 뉴스 검색 및 Evidence Filter 연동<br>- AI 리포트 생성 Chain과 리포트 챗봇 Chain 구현<br>- 재무 용어 응답 및 챗봇 안전 필터링 로직 보강 |
+| 박소윤  | Data Engineering - DB/Infra & Retrieval | - MySQL·Vector DB 기반 Hybrid Retrieval 구조 설계<br>- metadata filtering 및 disclosure/news retrieval 구현<br>- signals·detected_changes 기반 AI 검색 입력 및 API schema 설계<br>- Frontend·AI 연동 인터페이스 안정화 |
+| 박은지  | PM/문서화/API 명세 | - 일정 관리 및 문서화 총괄<br>- API 명세 관리<br>- 리포트 논리 구조 설계<br>- 재무 데이터 거버넌스 및 뉴스 검색 임계치 기준 수립 |
+| 위희찬  | Data Engineering - 수집/가공 | - OpenDART 재무제표 수집<br>- 핵심 재무계정 기반 5개년 데이터 수집<br>- 재무비율 산출 및 MySQL 적재 준비<br>- 공시 텍스트 청킹 |
+| 홍지윤  | UI & 시각화 - 웹 프레임워크/연동 | - FastAPI/Django 기반 백엔드 서버 초안 구성<br>- AI 로직 및 DB 데이터를 프론트엔드로 전달하는 API 연동<br>- 비동기 로딩 화면 구현 |
 
 ---
 
