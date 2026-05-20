@@ -814,15 +814,12 @@ FINANCE_DOT_ZIP
 FINANCE_DOT_ZIP
 ├─ assets
 │  ├─ README img
-│  │  ├─ Backend Architecture.png
 │  │  ├─ image-4.png
 │  │  ├─ image-5.png
 │  │  ├─ image-6.png
 │  │  ├─ image-8.png
 │  │  ├─ image-9.png
-│  │  ├─ image-10.png
-│  │  ├─ SQL DB.png
-│  │  └─ Vector DB.png
+│  │  └─ image-10.png
 │  └─ team
 │     ├─ clawhauser.jpg
 │     ├─ flash.jpg
