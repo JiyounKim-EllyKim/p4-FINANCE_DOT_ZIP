@@ -113,7 +113,7 @@
 </table>
 
 
-| 이름   | 역할 | 담당 |
+| 이름 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 역할 | 담당 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |------| --- | --- |
 | 김이선  | UI & 시각화 - 프론트엔드 | - 프로젝트 전체 화면설계<br>- React 사용한 프론트 전체 구조 설계<br>- 3-Tab 기반 SPA 페이지 전환구조 구현<br>- 분석 리포트형 HTML/CSS 레이아웃 컴포넌트 구현<br>- 드래그 리사이즈 레이아웃 및 MSW 모킹 환경 구축<br>- 뉴스 기반 변동 사유 분석 화면 개발<br>- AI 채팅 어시스턴트 패널 개발|
 | 김지윤  | AI & Agent | - LangChain 기반 AI 리포트 생성 파이프라인 설계<br>- MySQL 재무 데이터와 Vector DB 근거를 결합한 Hybrid Chain 구현<br>- Tavily 뉴스 검색 및 Evidence Filter 연동<br>- AI 리포트 생성 Chain과 리포트 챗봇 Chain 구현<br>- 재무 용어 응답 및 챗봇 안전 필터링 로직 보강 |
@@ -1207,11 +1207,13 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 <table style="width:100%; border-collapse: collapse; border:1px solid #ddd;">
 <thead><tr style="background-color:#f2f2f2;"><th style="border:1px solid #ddd; padding:8px;">대상자</th><th style="border:1px solid #ddd; padding:8px;">작성자</th><th style="border:1px solid #ddd; padding:8px;">회고 내용</th></tr></thead>
 <tbody>
-<tr><td rowspan="5" style="text-align:center; border:1px solid #ddd;"><b>김이선</b></td><td style="text-align:center; border:1px solid #ddd;">박은지</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">위희찬</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">박소윤</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">김지윤</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">홍지윤</td><td style="border:1px solid #ddd;"></td></tr>
+<tr><td rowspan="5" style="text-align:center; border:1px solid #ddd;"><b>김이선</b></td><td style="text-align:center; border:1px solid #ddd;">박은지</td><td style="border:1px solid #ddd;">김이선 님은 프론트엔드 개발자로서 React와 Vite, DRF를 매끄럽게 연결하여 화면의 구성과 대시보드의 기능성을 끌어올려 주셨습니다. 특히 산출물 준비 중 Figma를 활용한 화면설계서 작성을 주도하며 UI/UX 구조를 명확히 구체화해 주신 덕분에, 전반적으로 깔끔하고 완성도 높은 화면을 구현하여 유저에게 보이는 웹사이트의 미감과 전체적인 개발 완성도를 높이는 데 큰 기여를 해주셨습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">위희찬</td><td style="border:1px solid #ddd;">프론트엔드 화면 구성과 시각화 작업을 담당하며 재무 데이터와 분석 결과가 한눈에 들어올 수 있도록 보기 좋고 간결한 화면을 설계해주셨습니다. Plotly.js를 활용한 재무 추이 차트와 HTML/CSS 레이아웃 구성을 통해 분석 리포트가 단순한 데이터 출력이 아니라 애널리스트 보고서처럼 보일 수 있도록 완성도를 높여주셨습니다. 또한 발표 자료 준비에도 신경 써주어 프로젝트 결과물이 청중에게 더 명확하게 전달될 수 있도록 도와주셨습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">박소윤</td><td style="border:1px solid #ddd;">프로젝트 전체 프론트 구조와 화면 설계를 담당하며 서비스 UI 흐름을 구현해주셨습니다.
+특히 3-Tab 기반 페이지 구조와 분석 리포트형 화면 구성을 통해 데이터를 보기 쉽게 정리해주셨고, AI 채팅 패널과 뉴스 분석 화면 등 사용자 경험과 직접 연결되는 기능들을 구현해주신 점이 인상 깊었습니다.
+</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">김지윤</td><td style="border:1px solid #ddd;">프론트 구현을 담당하여 프로젝트의 주요 기능들이 사용자에게 직관적으로 전달될 수 있도록 전체 화면 구조를 안정적으로 구성해주었습니다. React 기반의 페이지 전환 구조와 분석 리포트형 화면, 뉴스 분석 및 AI 채팅 패널 등을 구현하며 복잡한 분석 결과를 깔끔하고 보기 쉽게 시각화하는 데 기여하였습니다. 또한 개발 과정에서 팀원들의 피드백을 적극적으로 반영해 화면의 가독성과 사용성을 개선하였고, 테스트 과정에서도 오류가 발생하는 부분을 꼼꼼히 확인하고 공유하여 프로젝트 안정성을 높이는 데 도움을 주었습니다. 맡은 역할을 성실히 수행하며 프론트 결과물의 완성도를 높여주었습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">홍지윤</td><td style="border:1px solid #ddd;">React 기반의 3-Tab SPA 구조를 설계하여 화면을 구현하고 사용성을 고려한 드래그 리사이즈 레이아웃과 MSW 모킹 환경을 구축하여 초기 개발 생산성을 크게 높였습니다. 전반적인 화면의 설계를 담당했고, 특히 뉴스 변동 사유 분석 화면과 AI 채팅 패널 등 복잡한 인터페이스를 컴포넌트 단위로 깔끔하게 설계 및 구현을 했습니다.  UI/UX 디자인 요소를 코드와 매끄럽게 연결하는 감각이 돋보였습니다. 함께 프론트엔드 파트를 맡았는데 먼저 프론트엔드의 전체 구조와 컴포넌트 구조를 설계해주셔서 감사했고 협업하기 너무 좋았습니다.</td></tr>
 </tbody>
 </table>
 <br>
@@ -1220,11 +1222,12 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 <table style="width:100%; border-collapse: collapse; border:1px solid #ddd;">
 <thead><tr style="background-color:#f2f2f2;"><th style="border:1px solid #ddd; padding:8px;">대상자</th><th style="border:1px solid #ddd; padding:8px;">작성자</th><th style="border:1px solid #ddd; padding:8px;">회고 내용</th></tr></thead>
 <tbody>
-<tr><td rowspan="5" style="text-align:center; border:1px solid #ddd;"><b>김지윤</b></td><td style="text-align:center; border:1px solid #ddd;">박은지</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">위희찬</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">박소윤</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">김이선</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">홍지윤</td><td style="border:1px solid #ddd;"></td></tr>
+<tr><td rowspan="5" style="text-align:center; border:1px solid #ddd;"><b>김지윤</b></td><td style="text-align:center; border:1px solid #ddd;">박은지</td><td style="border:1px solid #ddd;">김지윤 님은 우리 서비스의 아이덴티티인 AI 분석 파트를 단독으로 전담하며 탁월한 기술력을 보여주셨습니다. LangChain을 기반으로 LLM 환경을 정교하게 구축하였고, 체계적인 프롬프트 엔지니어링을 통해 답변의 정확도를 높였습니다. 특히 대형 리포트 생성을 위해 메인체인과 서브체인 구조를 분리·설계하여 복잡한 태스크를 안정적으로 처리하는 아키텍처를 구현해 주신 덕분에 서비스의 기술적 완성도를 한 차원 끌어올릴 수 있었습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">위희찬</td><td style="border:1px solid #ddd;">AI와 에이전트 파트의 대부분을 담당하며 프로젝트의 핵심 기능 구현에 크게 기여해주셨습니다. 뉴스 수집을 위한 검색 연동부터 보고서 생성 과정에서 LLM이 필요한 부분, 사용자와 상호작용하는 채팅 기능까지 폭넓은 영역을 책임감 있게 수행해주셨습니다. 특히 MySQL의 정량 데이터와 Vector DB의 정성 데이터를 함께 활용하는 분석 흐름을 구성하며, 프로젝트의 AI 분석 기능이 실제 서비스처럼 동작할 수 있도록 중심 역할을 해주셨습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">박소윤</td><td style="border:1px solid #ddd;">LangChain 기반 AI 리포트 생성 구조와 Hybrid Chain 흐름을 구현해주셨습니다.
+재무 데이터와 Vector DB 근거를 함께 활용하는 AI 분석 구조를 실제 서비스 흐름으로 연결한 점이 인상 깊었습니다. 또한 Tavily 검색, Evidence Filter, 챗봇 Chain 등 AI 파이프라인 품질 개선을 지속적으로 진행해주셔서 프로젝트 완성도에 도움이 되었습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">김이선</td><td style="border:1px solid #ddd;">프로젝트의 핵심인 LLM 및 AI 파트 전반을 전담하며, 방대한 업무량에도 불구하고 높은 책임감으로 프로젝트의 완성도와 성능을 극대화하는 데 크게 기여했습니다. 기획 및 초기 구현 단계부터 최종 테스트에 이르기까지 전 과정에서 지속적으로 발생하는 태스크를 주도적으로 해결했습니다. 본인의 개발 업무에 안주하지 않고, 타 파트 팀원들과의 적극적인 기술 소통을 통해 시스템 전반의 성능 개선을 이끌어내며 프로젝트의 성공적인 마무리를 견인했습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">홍지윤</td><td style="border:1px solid #ddd;">LangChain을 활용해 하이브리드 체인 기반의 AI 리포트 생성 파이프라인을 독자적으로 설계하고, Tavily 뉴스 검색 및 Evidence Filter를 연동하여 리포트의 신뢰성을 극대화했습니다. 단순한 텍스트 생성을 넘어 재무 데이터(MySQL)와 벡터 데이터(Vector DB)를 결합하는 하이브리드 RAG 구조에 대한 깊은 이해도를 바탕으로 안전 필터링 및 재무 용어 보강 로직을 구현하여 서비스 완성도를 프로덕션 수준으로 끌어올렸습니다. AI 리포트 체인과 챗봇 체인이라는 복잡한 Agent 로직을 안정적으로 구현해 주셔서 서비스의 가장 강력한 셀링 포인트를 완성할 수 있었습니다.</td></tr>
 </tbody>
 </table>
 <br>
@@ -1233,11 +1236,11 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 <table style="width:100%; border-collapse: collapse; border:1px solid #ddd;">
 <thead><tr style="background-color:#f2f2f2;"><th style="border:1px solid #ddd; padding:8px;">대상자</th><th style="border:1px solid #ddd; padding:8px;">작성자</th><th style="border:1px solid #ddd; padding:8px;">회고 내용</th></tr></thead>
 <tbody>
-<tr><td rowspan="5" style="text-align:center; border:1px solid #ddd;"><b>박소윤</b></td><td style="text-align:center; border:1px solid #ddd;">박은지</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">위희찬</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">김지윤</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">김이선</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">홍지윤</td><td style="border:1px solid #ddd;"></td></tr>
+<tr><td rowspan="5" style="text-align:center; border:1px solid #ddd;"><b>박소윤</b></td><td style="text-align:center; border:1px solid #ddd;">박은지</td><td style="border:1px solid #ddd;">박소윤 님은 RDB 데이터부터 RAG(검색 증강 생성) 시스템을 위한 Vector DB에 이르기까지, 필요한 전처리 및 데이터 적재 작업을 수행해 주셨습니다. 또한, 금융 분석 플랫폼 내에서 작동하는 재무비율 산출 및 재무 시그널 탐지 함수를 코딩해주셔서 시스템이 정량적 위험 신호를 포착할 수 있도록 기능적 기반을 마련해 주셨습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">위희찬</td><td style="border:1px solid #ddd;">DB와 Vector DB 등 데이터 적재와 인프라 구축에 관련된 핵심 작업을 담당해주셨습니다. MySQL과 Vector DB 환경을 구성하고, 정량 데이터와 정성 데이터를 분리하여 저장할 수 있는 기반을 마련하며 프로젝트의 데이터 구조를 안정적으로 잡아주셨습니다. 또한 프론트엔드와 AI 파트에서 필요한 데이터를 활용할 수 있도록 데이터 흐름을 정리해주었고, 은지님과 함께 프로젝트 일정과 방향성에도 지속적으로 신경 써주셔서 팀 전체가 더 체계적으로 작업할 수 있었습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">김지윤</td><td style="border:1px solid #ddd;">DB schema와 metadata 구조를 정리하며 프로젝트의 데이터 흐름이 일관되게 이어질 수 있도록 기반을 마련해주었습니다. MySQL과 Vector DB를 함께 활용하는 구조에서 데이터가 효율적으로 검색되고 필터링될 수 있도록 설계하여, 이후 AI 분석과 프론트 연동이 안정적으로 이루어지는 데 기여하였습니다. 또한 Frontend와 AI가 주고받는 데이터 구조를 세심하게 조율하며 연동 과정에서 발생할 수 있는 혼선을 줄여주었습니다. 프로젝트 진행 중에는 일정과 구현 범위를 함께 정리해주며 팀원들이 각자의 역할을 놓치지 않고 마무리할 수 있도록 도와주었고, 전체 개발 흐름이 안정적으로 유지되는 데 큰 역할을 해주었습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">김이선</td><td style="border:1px solid #ddd;">프로젝트 초기 구상 단계부터 명확한 아키텍처 틀을 제시하고, Notion을 활용해 전체 업무 프로세스를 효율적으로 시각화 및 체계화했습니다. 이를 통해 팀원들이 서로의 진행 상황을 유기적으로 파악할 수 있는 협업 환경을 구축하는 데 큰 역할을 했습니다. 또한, 데이터 전처리부터 엔드포인트 연동까지의 데이터 파이프라인을 안정적으로 구축해 주어, 프론트엔드 개발 파트가 데이터 구조에 대한 부담 없이 화면 구현 및 UI/UX에만 집중할 수 있도록 개발 프로세스를 획기적으로 효율화했습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">홍지윤</td><td style="border:1px solid #ddd;">MySQL과 Vector DB를 연동한 Hybrid Retrieval 구조를 설계하여 메타데이터 필터링 및 공시/뉴스 검색 최적화를 하는데 크게 기여했습니다. 전반적인 DB와 함께 기획에서도 많이 신경을 써주셔서 기획을 구체화하는데 많은 영향을 받았습니다.</td></tr>
 </tbody>
 </table>
 <br>
@@ -1246,11 +1249,14 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 <table style="width:100%; border-collapse: collapse; border:1px solid #ddd;">
 <thead><tr style="background-color:#f2f2f2;"><th style="border:1px solid #ddd; padding:8px;">대상자</th><th style="border:1px solid #ddd; padding:8px;">작성자</th><th style="border:1px solid #ddd; padding:8px;">회고 내용</th></tr></thead>
 <tbody>
-<tr><td rowspan="5" style="text-align:center; border:1px solid #ddd;"><b>박은지</b></td><td style="text-align:center; border:1px solid #ddd;">위희찬</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">박소윤</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">김지윤</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">김이선</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">홍지윤</td><td style="border:1px solid #ddd;"></td></tr>
+<tr><td rowspan="5" style="text-align:center; border:1px solid #ddd;"><b>박은지</b></td><td style="text-align:center; border:1px solid #ddd;">위희찬</td><td style="border:1px solid #ddd;">PM 역할을 맡아 프로젝트의 전체적인 틀과 방향성을 잡아주셨습니다. 일정 관리뿐만 아니라 데이터 파이프라인 및 응답 규격 설계, 금융 분석 프레임워크에 필요한 지표와 산식 수립, AI 분석 엔진용 통합 시그널 설계 등 프로젝트의 핵심 기준을 정리해주셨습니다. 또한 UI/UX 레이아웃과 워크플로우를 검수하고, 분석 임계치 세부 튜닝과 뉴스 데이터 전처리 및 적재 기준까지 조율하며 프로젝트 완성도 향상에 크게 기여해주셨습니다.
+</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">박소윤</td><td style="border:1px solid #ddd;">프로젝트 문서화와 발표 자료 정리, API 명세 관리 등을 담당하셨습니다.
+각 파트에서 나온 내용을 발표 자료와 문서 형태로 정리하며 전체 결과물을 하나의 흐름으로 연결하는 작업을 진행하셨습니다.
+특히 여러 기능과 구조를 발표용 자료 형태로 정리하면서 프로젝트 결과물을 최종 산출물 형태로 정리하는 역할을 맡아주셨습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">김지윤</td><td style="border:1px solid #ddd;">PM 역할을 맡아 프로젝트의 전체 방향성을 잡고, 일정 관리와 문서화를 총괄하며 팀이 정해진 기간 안에 목표한 결과물을 완성할 수 있도록 이끌어주었습니다. 특히 리포트의 논리 구조와 warning signal 기준을 설계하여 프로젝트의 핵심 분석 흐름이 명확하게 잡힐 수 있도록 기여하였습니다. 또한 팀원별 구현 내용을 세심하게 파악하고, 중간 결과물을 지속적으로 확인하며 부족한 부분이나 수정이 필요한 지점을 구체적으로 짚어주었습니다. 각 파트가 따로 진행되면서 생길 수 있는 연결 문제를 조율해주었고, 프로젝트가 하나의 완성된 서비스처럼 정리될 수 있도록 전체적인 완성도를 높여준 팀원이었습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">김이선</td><td style="border:1px solid #ddd;">전체적인 서비스 기획부터 최종 발표에 이르기까지 PM(Project Manager)으로서 각자 다른 역할을 맡은 팀원들을 하나의 목표로 결속시키고 방향성을 제시했습니다. 특히 도메인의 개념적 난이도가 높아 개발 과정에서 팀원들이 기술적 장벽에 부딪혔을 때, 리스크를 빠르게 포착하고 조율해 주었습니다. 제한된 일정 속에서 팀원들이 핵심 기능 구현에 집중할 수 있도록 보완 및 수정이 필요한 컴포넌트를 명확하게 짚어주고 가이드를 제공함으로써, 프로젝트가 지연 없이 성공적으로 완수되는 데 결정적인 역할을 했습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">홍지윤</td><td style="border:1px solid #ddd;">기본적으로 주제 선택부터 시작해서 전반적인 기획을 맡아주셔서, 리포트의 논리적 구조를 설계하였고, 개발에만 몰두하다 보면 놓치기 쉬운 일정 관리와 데이터 기준을 확실하게 잡아주셔서 프로젝트가 방향을 잃지 않고 제때 마무리가 될 수 있었습니다. 또 기획 업무에만 그치지 않고, 뉴스 검색과 관련된 정성적 데이터를 전처리 후 벡터디비에 적재하는 내용까지 실제 소스로 구현해주셨습니다.</td></tr>
 </tbody>
 </table>
 <br>
@@ -1259,11 +1265,13 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 <table style="width:100%; border-collapse: collapse; border:1px solid #ddd;">
 <thead><tr style="background-color:#f2f2f2;"><th style="border:1px solid #ddd; padding:8px;">대상자</th><th style="border:1px solid #ddd; padding:8px;">작성자</th><th style="border:1px solid #ddd; padding:8px;">회고 내용</th></tr></thead>
 <tbody>
-<tr><td rowspan="5" style="text-align:center; border:1px solid #ddd;"><b>위희찬</b></td><td style="text-align:center; border:1px solid #ddd;">박은지</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">박소윤</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">김지윤</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">김이선</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">홍지윤</td><td style="border:1px solid #ddd;"></td></tr>
+<tr><td rowspan="5" style="text-align:center; border:1px solid #ddd;"><b>위희찬</b></td><td style="text-align:center; border:1px solid #ddd;">박은지</td><td style="border:1px solid #ddd;">위희찬 님은 OpenDART API를 활용하여 시스템의 기반이 되는 재무정보 및 공시 데이터 파이프라인을 안정적이고 견고하게 구축해 주셨습니다. 특히 까다롭고 복잡한 공시 정보 전처리 작업을 꼼꼼하게 수행하여 데이터의 높은 신뢰도를 확보해 주셨습니다. 기술적인 기여뿐만 아니라 프로젝트 마스코트 이미지를 직접 생성하는 등 다방면에서 프로젝트의 완성도를 높이는 데 적극적으로 기여해 주신 든든한 팀원입니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">박소윤</td><td style="border:1px solid #ddd;">OpenDART 기반 재무 데이터 수집과 전처리 작업을 담당하셨습니다.
+특히 핵심 재무계정 기반 데이터 수집과 재무비율 산출 구조를 정리해주셔서 이후 DB 적재와 AI 분석 연결 과정이 훨씬 수월해졌습니다. 또한 공시 텍스트 청킹 작업을 통해 Vector Retrieval 구조와 연결될 수 있는 데이터 기반을 마련해주셨습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">김지윤</td><td style="border:1px solid #ddd;">OpenDART 기반 재무제표 수집과 전처리를 담당하여 프로젝트의 분석 기능이 동작할 수 있는 핵심 데이터 기반을 마련해주었습니다. 핵심 재무계정 중심으로 5개년 데이터를 정리하고, 재무비율 산출 및 DB 적재를 준비함으로써 이후 AI 리포트 생성과 재무 분석 로직이 안정적으로 구현될 수 있도록 기여하였습니다. 또한 공시 텍스트를 RAG 구조에서 활용할 수 있도록 청킹 작업을 진행하여, 정형 재무 데이터뿐만 아니라 비정형 공시 데이터까지 분석에 활용할 수 있는 기반을 만들어주었습니다. 데이터 수집과 전처리라는 프로젝트의 기초 작업을 맡아 꼼꼼하게 정리해준 덕분에 이후 단계가 보다 수월하게 진행될 수 있었습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">김이선</td><td style="border:1px solid #ddd;">프로젝트의 핵심 데이터 소스인 OpenDART API 연동 및 환경 설정을 시작으로, 서비스의 기반이 되는 데이터 수집 파이프라인을 성공적으로 구축해 주셨습니다. 고유 기업 코드 매핑 로직을 정교하게 구현하여 대량의 데이터 조회 프로세스를 효율화했으며, 삼성전자의 5개년 재무제표 데이터를 수집하고 이를 안정적인 Raw JSON 형태로 적재하는 데 기여하셨습니다.
+특히 비정형 금융 데이터의 한계를 극복하기 위해 '재무제표 계정명 인벤토리'를 직접 구축함으로써, 후속 분석 및 서비스 연동 단계에서 데이터 정제 효율성을 극대화할 수 있는 강력한 데이터 표준화 체계를 마련해 주셨습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">홍지윤</td><td style="border:1px solid #ddd;">OpenDART API를 통해 핵심 재무계정 기반의 5개년 재무제표 데이터를 안정적으로 수집·파싱하고, 공시 텍스트를 효율적으로 청킹(Chunking)하여 Vector DB 적재의 기반을 마련했습니다. 비정형 공시 데이터와 정형 재무 데이터를 다루는 파이프라인 구축 능력이 우수하며 재무 비율을 정확하게 산출하여 데이터의 정합성을 확보하는 등 꼼꼼한 데이터 엔지니어링 역량을 보여주었습니다. 방대한 데이터 수집과 텍스트 청킹이라는 고된 밑작업을 완벽하게 처리해 주신 덕분에 이후의 하이브리드 검색과 AI 분석이 원활하게 가능했습니다</td></tr>
 </tbody>
 </table>
 <br>
@@ -1272,11 +1280,14 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 <table style="width:100%; border-collapse: collapse; border:1px solid #ddd;">
 <thead><tr style="background-color:#f2f2f2;"><th style="border:1px solid #ddd; padding:8px;">대상자</th><th style="border:1px solid #ddd; padding:8px;">작성자</th><th style="border:1px solid #ddd; padding:8px;">회고 내용</th></tr></thead>
 <tbody>
-<tr><td rowspan="5" style="text-align:center; border:1px solid #ddd;"><b>홍지윤</b></td><td style="text-align:center; border:1px solid #ddd;">박은지</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">위희찬</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">박소윤</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">김지윤</td><td style="border:1px solid #ddd;"></td></tr>
-<tr><td style="text-align:center; border:1px solid #ddd;">김이선</td><td style="border:1px solid #ddd;"></td></tr>
+<tr><td rowspan="5" style="text-align:center; border:1px solid #ddd;"><b>홍지윤</b></td><td style="text-align:center; border:1px solid #ddd;">박은지</td><td style="border:1px solid #ddd;">홍지윤 님은 React, Vite, DRF 등 핵심 스택을 활용하여 사용자가 재무 데이터를 직관적으로 확인할 수 있는 완성도 높은 인터랙티브 대시보드를 구현해 주셨습니다. Frontend와 Backend의 연결 또한 자연스럽게 이어질 수 있도록 협업해주셨습니다. 또한, 프로젝트 진행 중 다양한 의견을 조율하고 유연하게 소통을 이끌어 주신 덕분에 팀의 결속력을 유지하며 프로젝트를 올바른 방향으로 완수할 수 있었습니다. 우수한 개발 역량과 훌륭한 소프트 스킬을 두루 갖춘 팀원입니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">위희찬</td><td style="border:1px solid #ddd;">프론트엔드 화면 구성을 담당하며 프로젝트 데이터를 사용자가 보기 쉽고 간결하게 확인할 수 있도록 설계해주셨습니다. 재무 데이터와 AI 분석 결과가 화면 안에서 자연스럽게 전달될 수 있도록 구성했고, 전체적인 화면 흐름과 시각적 완성도를 높이는 데 큰 역할을 해주셨습니다. 또한 팀원들과 적극적으로 소통하며 협업 분위기를 원활하게 만들어주었고, 필요한 화면 구성 방향을 함께 맞춰가며 프로젝트 진행 과정에서 팀원 간 화합에도 많은 도움을 주셨습니다.
+</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">박소윤</td><td style="border:1px solid #ddd;">Django REST API와 React 연동 구조를 중심으로 서비스 연결 작업을 담당해주셨습니다.
+공통 API 통신 모듈과 비동기 로딩 구조를 구현해주셔서 Frontend와 Backend 간 데이터 흐름이 안정적으로 동작할 수 있었습니다.
+또한 재무 추이 차트와 공시 분석 리포트 렌더링 기능을 구현하며 사용자 관점의 시각화 완성도를 높여주셨습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">김지윤</td><td style="border:1px solid #ddd;">Django Rest API와 React를 연동하여 백엔드에서 전달되는 분석 결과가 프론트 화면에 안정적으로 표시될 수 있도록 구현해주었습니다. 공통 API 통신 구조와 비동기 로딩 화면을 구성해 데이터 요청 과정이 자연스럽게 이어지도록 하였고, 사용자가 분석 결과를 기다리는 과정에서도 흐름이 끊기지 않도록 사용자 경험을 개선하였습니다. 또한 재무 추이 차트와 AI 공시 분석 리포트 렌더링을 구현하며 복잡한 데이터를 화면에서 이해하기 쉽게 전달하는 데 기여하였습니다. 화면 구성 과정에서도 팀원들의 피드백을 적극적으로 반영해 가독성과 사용성을 개선하였고, 프로젝트 결과물이 더 깔끔하고 완성도 있게 보일 수 있도록 도와주었습니다.</td></tr>
+<tr><td style="text-align:center; border:1px solid #ddd;">김이선</td><td style="border:1px solid #ddd;">React를 활용하여 프론트엔드의 견고한 기본 구조를 설계하고, 도메인 난이도가 높았던 보고서 및 공시 분석 파트의 복잡한 챠트(그래프)와 텍스트 데이터를 직관적인 UI로 성공적으로 구현했습니다. 다소 생소하고 정밀한 구현이 요구되는 화면이었음에도 불구하고 타 파트 팀원들과 긴밀하게 소통하며 완성도를 높였습니다. 아울러 동료 프론트엔드 개발자의 기술적 애로사항과 서툰 부분을 세심하게 모니터링하고, 구체적인 디버깅 및 수정 방향성을 제시하는 등 팀 내 기술 멘토로서 동료 성장과 협업 분위기 조성에 크게 기여했습니다.</td></tr>
 </tbody>
 </table>
 </div>
