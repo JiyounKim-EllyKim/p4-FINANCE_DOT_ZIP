@@ -128,9 +128,9 @@
 ### Core
 - **Language**: Python, JavaScript
 - **Backend**: Django, Django REST Framework
-- **Front**: React, Vite
+- **Frontend**: React, Vite
 - **AI & LLM**: OpenAI API, LangChain
-- **Database:** MySQL, Pinecone (Vector D
+- **Database**: MySQL, Pinecone (Vector DB)
 
 ### Data & API
 
@@ -598,7 +598,7 @@ Vector DB 검색 결과는 LangChain `Document` 원본이 아니라 프론트/AI
 
 ### 핵심 구현 포인트
 
-### AI Chain 설계 방식
+#### AI Chain 설계 방식
 
 본 프로젝트의 AI 분석 파이프라인은 하나의 LLM을 여러 번 새로 선언하는 방식이 아니라, 동일한 LLM 객체를 기반으로 목적별 Prompt와 Chain을 분리하여 구성했습니다.
 
@@ -610,7 +610,7 @@ Vector DB 검색 결과는 LangChain `Document` 원본이 아니라 프론트/AI
 
 이 구조를 통해 LLM은 수치 계산을 직접 수행하지 않고, 이미 계산된 재무지표와 선별된 근거를 바탕으로 해석과 요약에 집중하도록 설계했습니다.
 
-### 뉴스 품질 필터링 및 정렬 정책
+#### 뉴스 품질 필터링 및 정렬 정책
 
 뉴스 검색 결과는 단순히 최신순으로 사용하지 않고, 리포트 근거로 적합한지를 기준으로 필터링합니다.
 
@@ -622,7 +622,7 @@ Vector DB 검색 결과는 LangChain `Document` 원본이 아니라 프론트/AI
 
 이를 통해 리포트가 단순 뉴스 요약이 아니라, 재무 변화와 연결 가능한 근거 중심 분석이 되도록 구성했습니다.
 
-### 리포트 챗봇 응답 제어
+#### 리포트 챗봇 응답 제어
 
 리포트 챗봇은 생성된 AI 리포트, 사용 근거, 최근 대화 기록을 기반으로 답변합니다. 또한 금융 용어 질문에 대응할 수 있도록 용어 설명 로직을 보강하고, 부적절한 입력에 대해서는 안전 필터를 적용했습니다.
 
@@ -1132,7 +1132,7 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 ## 12. 서비스 시나리오
 
 
-![alt text](<assets/README img/image-8.png>)
+![기업 검색 화면](<assets/README img/image-8.png>)
 
 입력:
 
@@ -1140,7 +1140,7 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 삼성전자
 ```
 
-![alt text](<assets/README img/image-9.png>)
+![삼성전자 검색 화면](<assets/README img/image-9.png>)
 
 처리 흐름:
 
@@ -1154,10 +1154,10 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 8. 종합 리포트 생성
 9. 사용자의 후속 질문은 리포트 context와 chat history 기반으로 답변
 
-![alt text](<assets/README img/image-4.png>)
-![alt text](<assets/README img/image-5.png>)
-![alt text](<assets/README img/image-6.png>)
-![alt text](<assets/README img/image-10.png>)
+![보고서 화면](<assets/README img/image-4.png>)
+![뉴스 분석 화면](<assets/README img/image-5.png>)
+![공시 분석 화면](<assets/README img/image-6.png>)
+![AI 챗봇 화면](<assets/README img/image-10.png>)
 
 출력:
 
@@ -1194,8 +1194,6 @@ POST /api/v1/report/comprehensive/{stock_code}/chat
 - AI 리포트의 문체, 근거 인용 방식, 위험/긍정 요인 정렬 기준을 지속적으로 튜닝해야 합니다.
 - 챗봇이 리포트 범위를 벗어난 질문을 받았을 때의 응답 정책을 더 정교화해야 합니다.
 - 웹에서 기업명 검색 시 응답속도 개선이 필요합니다.
-
----
 
 ---
 
