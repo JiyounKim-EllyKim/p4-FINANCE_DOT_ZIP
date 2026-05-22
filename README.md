@@ -113,15 +113,14 @@
 </table>
 
 
-| 이름 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 역할 | 담당 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
-|------| --- | --- |
-| 김이선  | UI & 시각화 - 프론트엔드 | - 프로젝트 전체 화면설계<br>- React 사용한 프론트 전체 구조 설계<br>- 3-Tab 기반 SPA 페이지 전환구조 구현<br>- 분석 리포트형 HTML/CSS 레이아웃 컴포넌트 구현<br>- 드래그 리사이즈 레이아웃 및 MSW 모킹 환경 구축<br>- 뉴스 기반 변동 사유 분석 화면 개발<br>- AI 채팅 어시스턴트 패널 개발|
-| 김지윤  | AI & Agent | - LangChain 기반 AI 리포트 생성 파이프라인 설계<br>- MySQL 재무 데이터와 Vector DB 근거를 결합한 Hybrid Chain 구현<br>- Tavily 뉴스 검색 및 Evidence Filter 연동<br>- AI 리포트 생성 Chain과 리포트 챗봇 Chain 구현<br>- 재무 용어 응답 및 챗봇 안전 필터링 로직 보강 |
-| 박소윤  | Data Engineering - DB/Infra & Retrieval | - MySQL·Vector DB 기반 Hybrid Retrieval 구조 설계<br>- metadata filtering 및 disclosure/news retrieval 구현<br>- signals·detected_changes 기반 AI 검색 입력 및 API schema 설계<br>- Frontend·AI 연동 인터페이스 안정화 및 응답 구조 정리<br>- Vector DB metadata schema 정리 및 retrieval 테스트/디버깅 |
-| 박은지  | PM/문서화/API 명세 | - 일정 관리 및 문서화 총괄<br>- API 명세 관리<br>- 리포트 논리 구조 설계<br>- 재무 데이터 거버넌스 및 뉴스 검색 임계치 기준 수립 |
-| 위희찬  | Data Engineering - 수집/가공 | - OpenDART 재무제표 수집<br>- 핵심 재무계정 기반 5개년 데이터 수집<br>- 재무비율 산출 및 MySQL 적재 준비<br>- 공시 텍스트 청킹 |
-| 홍지윤  | UI & 시각화 - 웹 프레임워크/연동 | - Django Rest API & React 연동<br>- 공통 API 통신 모듈 설계 및 구현<br>- 비동기 로딩 화면 구현<br>- react-rechart 기반 매출 vs 영업이익 복합 재무 추이 차트 구현<br>- AI 기반 공시 분석 리포트 렌더링 개발 |
-
+| 이름 | 역할 | 담당 |
+| --- | --- | --- |
+| 김이선 | UI & 시각화<br>프론트엔드 | - 프로젝트 전체 화면 설계<br>- React 기반 프론트 전체 구조 설계<br>- 3-Tab 기반 SPA 페이지 전환 구조 구현<br>- 분석 리포트형 HTML/CSS 레이아웃 컴포넌트 구현<br>- 드래그 리사이즈 레이아웃 및 MSW 모킹 환경 구축<br>- 뉴스 기반 변동 사유 분석 화면 개발<br>- AI 채팅 어시스턴트 패널 개발 |
+| 김지윤 | AI & Agent | - LangChain 기반 AI 리포트 생성 파이프라인 설계<br>- MySQL 재무 데이터와 Vector DB 근거를 결합한 Hybrid Chain 구현<br>- Tavily 뉴스 검색 및 Evidence Filter 연동<br>- AI 리포트 생성 Chain과 리포트 챗봇 Chain 구현<br>- 재무 용어 응답 및 챗봇 안전 필터링 로직 보강 |
+| 박소윤 | Data Engineering<br>DB/Infra & Retrieval | - MySQL·Vector DB 기반 Hybrid Retrieval 구조 설계<br>- metadata filtering 및 disclosure/news retrieval 구현<br>- signals·detected_changes 기반 AI 검색 입력 및 API schema 설계<br>- Frontend·AI 연동 인터페이스 안정화 및 응답 구조 정리<br>- Vector DB metadata schema 정리 및 retrieval 테스트/디버깅 |
+| 박은지 | PM / 문서화<br>API 명세 | - 일정 관리 및 문서화 총괄<br>- API 명세 관리<br>- 리포트 논리 구조 설계<br>- 재무 데이터 거버넌스 및 뉴스 검색 임계치 기준 수립 |
+| 위희찬 | Data Engineering<br>수집/가공 | - OpenDART 재무제표 수집<br>- 핵심 재무계정 기반 5개년 데이터 수집<br>- 재무비율 산출 및 MySQL 적재 준비<br>- 공시 텍스트 청킹 |
+| 홍지윤 | UI & 시각화<br>웹 프레임워크/연동 | - Django REST API & React 연동<br>- 공통 API 통신 모듈 설계 및 구현<br>- 비동기 로딩 화면 구현<br>- Recharts 기반 매출 vs 영업이익 복합 재무 추이 차트 구현<br>- AI 기반 공시 분석 리포트 렌더링 개발 |
 ---
 
 ## 3. 기술 스택
